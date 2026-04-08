@@ -197,10 +197,12 @@ def create_visualizations(kpi_results):
     plt.close()
 
     # KPI 2: MoM Growth
+    # KPI 2: MoM Growth
     plt.figure(figsize=(12,5))
     y = kpi_results['mom_growth'].values
+    x_mom = [str(p) for p in kpi_results['mom_growth'].index]
     bar_colors = [COLORS[2] if v>=0 else COLORS[3] for v in y]
-    plt.bar(x,y,color=bar_colors)
+    plt.bar(x_mom,y,color=bar_colors)
     plt.axhline(0, color='black', linestyle='--')
     plt.title("Month-over-Month Revenue Growth")
     plt.xlabel("Month")
